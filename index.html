@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Content-Language" content="en">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vishul Sinha</title>
+    <link rel="stylesheet" href="./dist/style.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+</head>
+
+<body>
+    <div class="container">
+
+        <main class="hero">
+            <div class="canvascontainer">
+                <div class="mask"></div>
+                <canvas id="canvas"></canvas>
+                <div class="glitch-wrapper">
+                    <img src="./public/vector.svg" alt="" class="vector">
+                    <div class="glitch"> Vishul Sinha</div>
+                    <h1 class="typewriter"></h1>
+                </div>
+            </div>
+        </main>
+        <nav class="nav">
+            <article class="flex center_center">
+                <h3>Home</h3>
+                <h3>About</h3>
+            </article>
+        </nav>
+
+        <main class="intro flex center_center top_margin">
+            <p>Hello, I'm Vishul Sinha, a passionate web designer and developer with expertise in Next.js, TypeScript,
+                HTML, CSS, JavaScript, Three.js, GSAP, Figma, and React. I take pride in crafting captivating digital
+                experiences that blend creativity and functionality seamlessly. Through my portfolio, you'll discover a
+                range of exciting projects showcasing my versatility, attention to detail, and dedication to creating
+                outstanding user experiences. Let's collaborate and bring your visions to life!</p>
+        </main>
+
+        <main class="designs flex center_center col">
+            <h2>Graphic Designs and UI/UX Designs</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <img src="./public/1.jpg" alt="" srcset="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./public/2.jpg" alt="" srcset="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./public/3.jpg" alt="" srcset="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./public/4.jpg" alt="" srcset="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./public/5.jpg" alt="" srcset="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./public/6.jpg" alt="" srcset="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./public/7.jpg" alt="" srcset="">
+                    </div>
+                    <div class="swiper-slide">
+                        <img src="./public/8.png" alt="" srcset="">
+                    </div>
+
+                </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </main>
+
+        <main>
+            <div class="whatweoffer flex center_center col">
+                <h1>Web Development Projects</h1>
+                <div class="card_container flex center_center col">
+                    <div class="card flex col">
+                        <h2>Space V</h2>
+                        <p>
+                            The website aims at teaching people more about the planets in our solar system in a fun and
+                            engaging way
+
+                            I designed and developed this website from scratch, from its wireframe to it's complete code
+
+                            Features include - Modern minimal UI inspired from games, 3D models of the Planets made
+                            using WEB GL(Three JS), Responsive website, Easy to navigate
+                        </p>
+                        <p><a href="https://sinhavishul244.github.io/SpaceV/codes/homepage/home.html">Deployed link</a>
+                        </p>
+                    </div>
+                    <div class="card flex col">
+                        <h2>Karmyog - a Todo app</h2>
+                        <p>
+                            A Todo app that syncs your data across all the devices
+
+                            Frontend developed using HTML CSS and JavaScript, Backend developed with mongoDb, expressJS
+                            and NodeJS
+
+                            As a designer and developer, I ensured that the website looks good and aesthetic to the eyes
+                            using javascript libraries such as ThreeJS, GSAP, SwiperJS, TooltipJS and ToastifyJS
+
+                            Both backend and frontend and deploy on different platforms so I have ensured that CORS
+                            (cross origin resource sharing) was enabled
+
+                            The app used token based authentication system and the password stored inside is properly
+                            encrypted using bcrypt
+                        </p>
+                        <p>
+                            <a href="https://sinhavishul244.github.io/Karmyog/">Deployed link</a>
+                        </p>
+                    </div>
+                    <div class="card flex col">
+                        <h2>Landing page using nextJS</h2>
+                        <p>
+                            A landing page made as an assignment for a project copying their figma design
+
+                            Uses the power of next JS, server side components and client side components to improve the
+                            performance
+
+                            Code written in typescript with two backend APIs to send email addresses and store them in
+                            mongoDb database
+
+                            Includes SVG animation and fully responsive design
+
+                            Uses GSAP for animations
+                        </p>
+                        <p>
+                            <a href="https://xerocodee-silk.vercel.app/">Deployed link</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+    </div>
+
+
+
+
+
+    <script id="snoise-function" type="x-shader/x-vertex">
+        vec3 mod289(vec3 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+        vec2 mod289(vec2 x) { return x - floor(x * (1.0 / 289.0)) * 289.0; }
+        vec3 permute(vec3 x) { return mod289(((x*34.0)+1.0)*x); }
+
+        float snoise(vec2 v) {
+            const vec4 C = vec4(0.211324865405187,  // (3.0-sqrt(3.0))/6.0
+                                0.366025403784439,  // 0.5*(sqrt(3.0)-1.0)
+                                -0.577350269189626,  // -1.0 + 2.0 * C.x
+                                0.024390243902439); // 1.0 / 41.0
+            vec2 i  = floor(v + dot(v, C.yy) );
+            vec2 x0 = v -   i + dot(i, C.xx);
+            vec2 i1;
+            i1 = (x0.x > x0.y) ? vec2(1.0, 0.0) : vec2(0.0, 1.0);
+            vec4 x12 = x0.xyxy + C.xxzz;
+            x12.xy -= i1;
+            i = mod289(i); // Avoid truncation effects in permutation
+            vec3 p = permute( permute( i.y + vec3(0.0, i1.y, 1.0 ))
+                + i.x + vec3(0.0, i1.x, 1.0 ));
+
+            vec3 m = max(0.5 - vec3(dot(x0,x0), dot(x12.xy,x12.xy), dot(x12.zw,x12.zw)), 0.0);
+            m = m*m ;
+            m = m*m ;
+            vec3 x = 2.0 * fract(p * C.www) - 1.0;
+            vec3 h = abs(x) - 0.5;
+            vec3 ox = floor(x + 0.5);
+            vec3 a0 = x - ox;
+            m *= 1.79284291400159 - 0.85373472095314 * ( a0*a0 + h*h );
+            vec3 g;
+            g.x  = a0.x  * x0.x  + h.x  * x0.y;
+            g.yz = a0.yz * x12.xz + h.yz * x12.yw;
+            return 130.0 * dot(m, g);
+        }
+    </script>
+    <script id="vertex-shader" type="x-shader/x-vertex">
+        uniform float u_time;
+        uniform vec2 u_randomisePosition;
+
+        varying float vDistortion;
+        varying float xDistortion;
+        varying vec2 vUv;
+
+        void main() {
+            vUv = uv;
+            vDistortion = snoise(vUv.xx * 3. - u_randomisePosition * 0.15);
+            xDistortion = snoise(vUv.yy * 1. - u_randomisePosition * 0.05);
+            vec3 pos = position;
+            pos.z += (vDistortion * 35.);
+            pos.x += (xDistortion * 25.);
+
+            gl_Position = projectionMatrix * modelViewMatrix * vec4(pos, 1.0);
+        }
+    </script>
+
+    <script id="fragment-shader" type="x-shader/x-fragment">
+
+        vec3 rgb(float r, float g, float b) {
+            return vec3(r / 255., g / 255., b / 255.);
+        }
+
+        vec3 rgb(float c) {
+            return vec3(c / 255., c / 255., c / 255.);
+        }
+
+        uniform vec3 u_bg;
+        uniform vec3 u_bgMain;
+        uniform vec3 u_color1;
+        uniform vec3 u_color2;
+        uniform float u_time;
+
+        varying vec2 vUv;
+        varying float vDistortion;
+
+        void main() {
+            vec3 bg = rgb(u_bg.r, u_bg.g, u_bg.b);
+            vec3 c1 = rgb(u_color1.r, u_color1.g, u_color1.b);
+            vec3 c2 = rgb(u_color2.r, u_color2.g, u_color2.b);
+            vec3 bgMain = rgb(u_bgMain.r, u_bgMain.g, u_bgMain.b);
+
+            float noise1 = snoise(vUv + u_time * 0.08);
+            float noise2 = snoise(vUv * 2. + u_time * 0.1);
+
+            vec3 color = bg;
+            color = mix(color, c1, noise1 * 0.6);
+            color = mix(color, c2, noise2 * .4);
+
+            color = mix(color, mix(c1, c2, vUv.x), vDistortion);
+
+            float border = smoothstep(0.1, 0.6, vUv.x);
+
+            color = mix(color, bgMain, 1. -border);
+
+            gl_FragColor = vec4(color, 1.0);
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="./scripts/others.min.js"></script>
+    <script type="module" src="./scripts/ThreeJS.min.js"></script>
+    <script src="./scripts/script.min.js"></script>
+
+</body>
+
+</html>
